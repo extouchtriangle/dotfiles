@@ -1,5 +1,7 @@
 # extouchtriangle/dotfiles
 
+[![Dotfiles](https://extouchtriangle-readme-stats.vercel.app/api/pin/?username=extouchtriangle&repo=dotfiles&theme=tokyonight&border_color=43c2b2&locale=en&show_owner=true)](https://github.com/extouchtriangle/dotfiles)
+
 These are the dotfiles for extouchtriangle.
 These are mainly used for syncing files between computers,
 (and sometimes different VMs within the same computer)
