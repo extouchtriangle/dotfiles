@@ -1,0 +1,210 @@
+% Package for typesetting OTIS materials
+\ProvidesPackage{eotis}
+\newcommand{\logopath}{otis-logo-sm.png}
+\newcommand{\thelogo}{\includegraphics[width=6em]{\logopath}}
+\newcommand{\logo}[1]{\renewcommand{\thelogo}{#1}}
+%% Options
+\newif\ifotisexam\otisexamfalse
+\DeclareOption{exam}{\otisexamtrue}
+\newif\ifotiswater\otiswatertrue
+\DeclareOption{nowatermark}{\otiswaterfalse}
+\newif\ifotishandout\otishandoutfalse
+\DeclareOption{handout}{\otishandouttrue}
+\newif\ifotislogo\otislogotrue
+\DeclareOption{nologo}{\otislogofalse}
+\ProcessOptions\relax
+\usepackage[brave]{von}
+\newcommand{\artwork}[2]{
+  \bgroup
+  \fboxrule=4pt
+  \noindent\fbox{\includegraphics[width=\textwidth]{#1}} \\[1ex]
+  \egroup
+  \textsf{\small OTIS, \copyright\ Evan Chen, internal use only.
+  Artwork contributed by #2.}
+  \newpage
+}
+\newcommand{\eartwork}[2]{
+  \bgroup
+  \fboxrule=4pt
+  \noindent\fbox{\includegraphics[width=\textwidth]{#1}} \\[1ex]
+  \egroup
+  \textsf{\small Artwork contributed by #2.}
+  \newpage
+}
+
+\ifotisexam
+\usepackage[nohdr,mdthm]{extouchtriangle}
+
+\declaretheoremstyle[
+  headfont=\color{blue!40!black}\normalfont\bfseries,
+  spaceabove=8pt,
+  spacebelow=24pt,
+  bodyfont=\normalfont
+]{olystyle}
+\declaretheorem[style=olystyle,name=JMO]{jprob}
+\declaretheorem[style=olystyle,name=USAMO]{uprob}
+\declaretheorem[style=olystyle,name=TST]{tprob}
+\declaretheorem[style=olystyle,name=Question]{quiz}
+
+\ohead{\righthead\vspace{-1em}}
+\ofoot{\emph{\sevenpoints}}
+\setlength{\headheight}{9em}
+\setlength{\headsep}{2em}
+\setlength{\voffset}{-0.5cm}
+\setlength{\hoffset}{-0.5cm}
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{21cm}
+\newcommand{\olyinfo}[1]{
+  \begin{flushright} \emph{#1}
+\end{flushright} \medskip}
+\newcommand{\nmbox}[1]{\fbox{\sffamily\LARGE\vphantom{y}#1}
+\par\vspace{1em}} % normal box
+\newcommand{\fdbox}[2]{\fbox{\sffamily\LARGE\vphantom{y}#1: \bfseries
+#2} \par\vspace{1em}} % field box
+
+\newcommand{\righthead}{%
+  {\sffamily \Huge OTIS Mock Olympiad}  \\[1em]
+  {\sffamily \LARGE \textbf{\StrSubstitute{\jobname}{-}{ }}}
+  \par\vspace{1em}
+}
+\newcommand{\sevenpoints}{Time limit: 4.5 hours. \\
+Each problem is worth $7$ points.}
+\else
+
+% OTIS logo at bottom
+\cfoot{}
+\ifotislogo
+\ifoot{\thelogo}
+\fi
+\ofoot{\thepage}
+\newcommand{\theart}[1]{\includegraphics[width=4em]{#1}}
+
+\ifotishandout
+\newcommand{\club}[2]{\bgroup \color{#1}[$#2\clubsuit$]\egroup}
+\newcommand{\clubs}[1]{\club{blue!70!black}{#1}}
+\newcommand{\clubr}[1]{\club{red!80!black}{#1}}
+\newcommand{\clubg}[1]{\club{green!40!black}{#1}}
+\newcommand{\clubc}[1]{\club{cyan}{#1}}
+%\newcommand{\goal}[1]{Solve at least \clubg{#1} (more if you have time),
+%  including any problem marked in {\color{red} red}.}
+\newcommand{\goals}[2]{\bgroup
+  \sffamily\small \emph{Instructions}: Solve \clubg{#1}.
+  If you have time, solve \clubg{#2}.
+  Problems with {\color{red} red} weights are mandatory.
+\egroup\par}
+\newtheorem{probOTIS}{Problem}
+
+\newcounter{clubcounter}
+\setcounter{clubcounter}{1} % for mini-survey
+\newcommand{\addE}{\addtocounter{clubcounter}{2}}
+\newcommand{\addM}{\addtocounter{clubcounter}{3}}
+\newcommand{\addH}{\addtocounter{clubcounter}{5}}
+\newcommand{\addZ}{\addtocounter{clubcounter}{9}}
+\newtheorem*{probE}{\clubs{2} {\color{blue!20!black}Problem}}
+\newtheorem*{probM}{\clubs{3} {\color{blue!20!black}Problem}}
+\newtheorem*{probH}{\clubs{5} {\color{blue!20!black}Problem}}
+\newtheorem*{probZ}{\clubs{9} {\color{blue!20!black}Problem}}
+\newtheorem*{probER}{\clubr{2} {\color{purple!20!black}Required Problem}}
+\newtheorem*{probMR}{\clubr{3} {\color{purple!20!black}Required Problem}}
+\newtheorem*{probHR}{\clubr{5} {\color{purple!20!black}Required Problem}}
+\newtheorem*{probZR}{\clubr{9} {\color{purple!20!black}Required Problem}}
+\newtheorem*{probSurvey}{\clubs{1} {\color{blue!20!black}Mini Survey}}
+\newtheorem{probJ}[probOTIS]{\clubc{17} \color{blue!20!black}Problem}
+\newtheorem{probK}[probOTIS]{\clubc{33} \color{blue!20!black}Problem}
+\newtheorem{probL}[probOTIS]{\clubc{65} \color{blue!20!black}Problem}
+\newtheorem{probO}[probOTIS]{\color{blue!20!black}Problem}
+\newcommand{\enadZR}{
+\end{probZR} \addZ}
+\newcommand{\enadHR}{
+\end{probHR} \addH}
+\newcommand{\enadMR}{
+\end{probMR} \addM}
+\newcommand{\enadER}{
+\end{probER} \addE}
+\newcommand{\enadZ}{
+\end{probZ} \addZ}
+\newcommand{\enadH}{
+\end{probH} \addH}
+\newcommand{\enadM}{
+\end{probM}\addM}
+\newcommand{\enadE}{
+\end{probE}\addE}
+\newcommand{\vonE}[1]{\addtocounter{clubcounter}{2}
+\renewcommand{\vonenvname}{probE}\von{#1}}
+\newcommand{\vonM}{\addtocounter{clubcounter}{3}
+\renewcommand{\vonenvname}{probM}\von}
+\newcommand{\vonH}{\addtocounter{clubcounter}{5}
+\renewcommand{\vonenvname}{probH}\von}
+\newcommand{\vonZ}{\addtocounter{clubcounter}{9}
+\renewcommand{\vonenvname}{probZ}\von}
+\newcommand{\vonER}{\addtocounter{clubcounter}{2}
+\renewcommand{\vonenvname}{probER}\von}
+\newcommand{\vonMR}{\addtocounter{clubcounter}{3}
+\renewcommand{\vonenvname}{probMR}\von}
+\newcommand{\vonHR}{\addtocounter{clubcounter}{5}
+\renewcommand{\vonenvname}{probHR}\von}
+\newcommand{\vonZR}{\addtocounter{clubcounter}{9}
+\renewcommand{\vonenvname}{probZR}\von}
+\newcommand{\vonJ}{\addtocounter{clubcounter}{17}
+\renewcommand{\vonenvname}{probJ}\von}
+\newcommand{\vonK}{\addtocounter{clubcounter}{33}
+\renewcommand{\vonenvname}{probK}\von}
+\newcommand{\vonL}{\addtocounter{clubcounter}{65}
+\renewcommand{\vonenvname}{probL}\von}
+\newcommand{\epdE}[1]{\addtocounter{clubcounter}{2}
+\renewcommand{\vonenvname}{probE}\von{#1}}
+\newcommand{\epdM}{\addtocounter{clubcounter}{3}
+\renewcommand{\vonenvname}{probM}\von}
+\newcommand{\epdH}{\addtocounter{clubcounter}{5}
+\renewcommand{\vonenvname}{probH}\von}
+\newcommand{\epdZ}{\addtocounter{clubcounter}{9}
+\renewcommand{\vonenvname}{probZ}\von}
+\newcommand{\epdER}{\addtocounter{clubcounter}{2}
+\renewcommand{\vonenvname}{probER}\von}
+\newcommand{\epdMR}{\addtocounter{clubcounter}{3}
+\renewcommand{\vonenvname}{probMR}\von}
+\newcommand{\epdHR}{\addtocounter{clubcounter}{5}
+\renewcommand{\vonenvname}{probHR}\von}
+\newcommand{\epdZR}{\addtocounter{clubcounter}{9}
+\renewcommand{\vonenvname}{probZR}\von}
+\newcommand{\epdJ}{\addtocounter{clubcounter}{17}
+\renewcommand{\vonenvname}{probJ}\von}
+\newcommand{\epdK}{\addtocounter{clubcounter}{33}
+\renewcommand{\vonenvname}{probK}\von}
+\newcommand{\epdL}{\addtocounter{clubcounter}{65}
+\renewcommand{\vonenvname}{probL}\von}
+
+\reversemarginpar
+% Walkthroughs to examples
+\newenvironment{walkthrough}{\noindent\textbf{\color{green!40!black}Walkthrough.}}{}
+
+\newcommand{\puidmarginpar}[1]{
+\marginpar{\footnotesize\ttfamily\color{green!40!black}#1}
+}
+
+\newcommand{\printsurvey}{%
+\begin{probSurvey}
+Fill out feedback on the OTIS-WEB portal when submitting this problem set.
+Any thoughts on problems (e.g.\ especially nice, instructive, easy, etc.)
+or overall comments on the unit are welcome.
+
+In addition, if you have any suggestions for problems to add,
+or want to write hints for one problem you really liked,
+please do so in the ARCH system!
+\end{probSurvey}
+}
+
+\newcommand{\isolved}{
+\begin{center}\LARGE \sffamily I solved \clubg{\theclubcounter},
+including the mini-survey.
+\end{center}}
+\newcommand{\conclusion}{%
+\printsurvey
+\noindent The maximum number of \clubs{} for this unit is
+\clubg{\theclubcounter}, including the mini-survey.
+
+}
+\fi
+\fi
+
+\hypersetup{pdfsubject={OTIS}}

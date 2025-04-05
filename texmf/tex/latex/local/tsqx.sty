@@ -1,0 +1,20 @@
+\ProvidesPackage{tsqx}
+\usepackage{scontents}
+\usepackage{pythontex}
+\begin{pycode}
+import os
+\end{pycode}
+\newenvironment{tsqx}
+{
+    \begin{scontents}[write-env=tmp.txt]
+}
+{
+    \end{scontents}
+    \py{os.system(python3 -m tsqx -p -s 12 tmp.txt > tmp.asy)}
+    \py{os.system(asy tmp.asy)}
+    \includegraphics{tmp.pdf}
+    \py{os.remove(tmp.txt)}
+    \py{os.remove(tmp.asy)}
+    \py{os.remove(tmp.pdf)}
+}
+

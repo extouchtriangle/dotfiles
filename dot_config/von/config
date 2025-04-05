@@ -1,0 +1,73 @@
+# vim: ft=yaml
+# This is an example of a VON config file
+# Please edit it to suit your needs
+
+# REQUIRED: Choose the default author for generated TeX files.
+# (You should probably put your name here)
+name: "extouchtriangle"
+
+# REQUIRED: Path to folder where you want to store your VON database
+# You can include "~" which gets expanded to your home directory
+# Make sure this folder exists!
+base_path: "~/Documents/EPD/"
+
+# REQUIRED: A list of sort tags
+# These particular tags are used for sorting and are highlighted differently.
+# Specify them however you want. Should be in increasing order.
+tags:
+  [
+    "trivial",
+    "easy",
+    "medium",
+    "hard",
+    "brutal",
+    "nightmare",
+    "extouchtriangle",
+  ]
+# If your terminal sucks and doesn't have color sequences (e.g. you are using Windows)
+# then you should uncomment this option and change it to false
+# color: true
+
+# The following text is placed as you do editing
+# in order to help you remember which tags you have.
+tag_hint_text: |
+  # Some hints for tags:
+  #
+  # *** Difficulty: trivial easy medium hard brutal nightmare extouchtriang jmo amo imo aime
+  # *** Problem Shape: yesno find construct bestpossible hardanswer aime joke cp
+  # (here well means I spent a lot of time on the problem myself)
+  #
+  # Quality: favorite > nice > good > ugly, grinding
+  # Philosophy: instructive reliable rushdown magic contrived
+  # Philosophy': smallcases equalitycase scouting meta dumb
+  # Philosophy'': wishful criticalclaim stronger thinkbig weird
+  # Habits: cases brave neatness
+  # Solution Method: induct manysolutions magic inefficient explicit compute
+  # More tags: pitfall troll intuitive size weak maturity
+  # Legal: blind todo unowned suggest
+  #
+  # NT:    primes vp QR pell smallestprime mods euclid rembound
+  #        fermat zsig cyclotomic divis order christmas CRT vietajump
+  # Alg:   FE ineq
+  #        polynomial trig roots calculus integral genfunc analysis
+  #        continuity irreducible exactsum manip swapsum
+  # FE:    cauchy pointwise cancel symmetry bump isolated
+  # Ineq:  holder CDN schur AMGM Titu homogenize
+  #        dehomogenize SOS jensen isofudge nEV
+  # Combo: greedy optimization additivecombo extreme invariant
+  #        global local EV rigid free process pigeonhole parity
+  #        grid perturb algorithm linalg combogeo graph adhoc hall
+  #        desire design understand justdoit
+  # Geometry tags: rich
+    # Part I and II: anglechase simtri pop homothety config
+    #                cevalaus trig complex bary length
+    # Part III:      inversion polar projective desargue harmonic
+    #                miquel spiralsim mixtilinear"""
+
+# By default your OS is autodetected
+# If this fails for some reason, you can set it to `windows`, `mac`, or `linux` below
+# os: linux
+
+# Name of text editor to invoke
+# By default, it detects from $EDITOR automatically
+# editor: vim

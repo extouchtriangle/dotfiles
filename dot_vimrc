@@ -1,0 +1,217 @@
+"
+" This is my init.vim file.
+" <PageDown> autocompletes using the first CoC option in insert mode
+" <PageUp> toggles the file tree
+" <Home> focus the file tree
+" <End> writes the file
+"
+"
+"
+"
+"
+"
+set guicursor=n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50
+  \,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor
+  \,sm:block-blinkwait175-blinkoff150-blinkon175
+set autoindent&
+set cindent&
+set shellslash
+let g:tex_flavor='latex'
+let g:Tex_CompileRule_pdf = 'latexmk -pv $*'
+set conceallevel=2
+set smartindent&
+set spell
+set spelllang=en
+set showcmd
+set noshowmode
+set indentexpr&
+let g:AutoPairsShortcutToggle = '<C-P>'
+" How many columns of whitespace a \t is worth
+set tabstop=4
+set shiftwidth=4 " Use spaces when tabbing
+set termguicolors
+set expandtab
+let g:tex_no_error=1
+let g:coc_node_path = '/usr/sbin/node'
+call plug#begin()
+Plug 'luochen1990/rainbow'
+Plug 'Pocco81/HighStr.nvim'
+Plug 'nvim-lualine/lualine.nvim'
+Plug '3rd/image.nvim'
+Plug 'kaarmu/typst.vim'
+Plug 'Eandrju/cellular-automaton.nvim'
+Plug 'zyedidia/vim-snake'
+Plug 'ya2s/nvim-cursorline'
+"Plug 'MrPicklePinosaur/typst-conceal.vim'
+Plug 'SirVer/UltiSnips'
+Plug 'hura/vim-asymptote'
+Plug 'vim-python/python-syntax',     { 'for' : 'python' }
+Plug 'sonjapeterson/1989.vim'
+Plug 'MunifTanjim/nui.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'luk400/vim-jukit'
+Plug 'catppuccin/nvim'
+Plug 'nvim-tree/nvim-web-devicons'
+Plug 'lervag/vimtex'
+Plug 'vigoux/LanguageTool.nvim'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'echasnovski/mini.icons'
+Plug 'glacambre/firenvim'
+Plug 'mhartington/formatter.nvim'
+Plug 'avakhov/vim-yaml'
+Plug 'L3N76/nuake'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'dcampos/nvim-snippy'
+Plug 'honza/vim-snippets'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+Plug 'sheerun/vim-polyglot'
+Plug 'nvim-tree/nvim-tree.lua'
+"Plug 'powerline/powerline'
+Plug 'dense-analysis/ale'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nvim-telescope/telescope.nvim'
+"Plug 'itchyny/lightline.vim'
+Plug 'rachartier/tiny-devicons-auto-colors.nvim'
+call plug#end()
+:highlight Normal ctermbg=black
+set nu
+set mouse=a
+imap <expr> <Tab> snippy#can_expand_or_advance() ? '<Plug>(snippy-expand-or-advance)' : '<Tab>'
+imap <expr> <S-Tab> snippy#can_jump(-1) ? '<Plug>(snippy-previous)' : '<S-Tab>'
+smap <expr> <Tab> snippy#can_jump(1) ? '<Plug>(snippy-next)' : '<Tab>'
+smap <expr> <S-Tab> snippy#can_jump(-1) ? '<Plug>(snippy-previous)' : '<S-Tab>'
+map @b V:<bs><bs><bs><bs><bs>HSHighlight<cr><Esc>n
+map @a /ANSWER<cr>@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b@b:noh<cr>:Cursorword disable<cr>
+xmap <Tab> <Plug>(snippy-cut-text)
+nnoremap <F4> :Nuake<CR>
+highlight NotifyERRORBorder ctermfg=8A1F1F
+inoremap <F4> <C-\><C-n>:Nuake<CR>
+
+tnoremap <F4> <C-\><C-n>:Nuake<CR>
+if exists("g:neovide")
+  set guifont=Hack\ Nerd\ Font,Noto\ Color\ Emoji:h14
+  let g:neovide_cursor_animate_in_insert_mode = v:true
+endif
+let g:airline_extensions = []
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:typst_conceal=1
+let g:typst_conceal_math=1
+let g:typst_conceal_emoji=1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_format = '[%severity%] [%linter%] %s'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_fixers = { '*' : ['remove_trailing_lines', 'trim_whitespace' ] } " by default
+let g:ale_fix_on_save = 1
+nmap t :w<Enter>
+let g:ale_keep_list_window_open = 0
+let g:ale_open_list = 0
+let g:ale_languagetool_options = '--disable COMMA_PARENTHESIS_WHITESPACE,WHITESPACE_RULE,UPPERCASE_SENTENCE_START,LC_AFTER_PERIOD,FILE_EXTENSIONS_CASE,ARROWS,EN_UNPAIRED_BRACKETS,UNLIKELY_OPENING_PUNCTUATION,UNIT_SPACE,ENGLISH_WORD_REPEAT_BEGINNING_RULE,CURRENCY,REP_PASSIVE_VOICE,EN_UNPAIRED_QUOTES'
+let g:ale_python_mypy_enabled = 0
+set nocompatible
+let &runtimepath = '~/.vim/bundle/rainbow,' . &runtimepath
+let &runtimepath = '~/.vim/bundle/vimtex,' . &runtimepath
+let &runtimepath .= ',~/.vim/bundle/vimtex/after'
+filetype plugin indent on
+filetype plugin on
+syntax enable
+
+nnoremap Q :wq<cr>
+let g:rainbow_active = 1
+let g:ale_python_mypy_options = '--ignore-missing-imports --enable-recursive-aliases'
+let g:ale_set_balloon= 1
+set numberwidth=3
+let g:ale_set_loclist = 1
+let g:ale_set_quickfix = 1
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '⛔'
+let g:ale_sign_warning = '⚠️'
+" let g:ale_use_neovim_diagnostics_api = 1
+let g:ale_virtualtext_cursor = 2
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsSnippetDirectories=["UltiSnips", "snips"]
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_format = '[%severity%] [%linter%] %s'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_fixers = { '*' : ['remove_trailing_lines', 'trim_whitespace' ] } " by default
+let g:ale_fix_on_save = 1
+let g:ale_keep_list_window_open = 0
+let g:ale_open_list = 0
+let g:ale_languagetool_options = '--disable COMMA_PARENTHESIS_WHITESPACE,WHITESPACE_RULE,UPPERCASE_SENTENCE_START,LC_AFTER_PERIOD,FILE_EXTENSIONS_CASE,ARROWS,EN_UNPAIRED_BRACKETS,UNLIKELY_OPENING_PUNCTUATION,UNIT_SPACE,ENGLISH_WORD_REPEAT_BEGINNING_RULE,CURRENCY,REP_PASSIVE_VOICE,EN_UNPAIRED_QUOTES'
+let g:ale_python_mypy_enabled = 0
+let g:ale_python_mypy_options = '--ignore-missing-imports --enable-recursive-aliases'
+let g:ale_set_balloon= 1
+let g:ale_set_loclist = 1
+let g:ale_set_quickfix = 1
+let g:ale_sign_column_always = 1
+let g:ale_sign_error = '⛔'
+let g:ale_sign_warning = '⚠️'
+" let g:ale_use_neovim_diagnostics_api = 1
+let g:ale_virtualtext_cursor = 2
+let g:ale_virtualtext_prefix = '☢️ '
+let NERDTreeShowBookmarks = 1
+let NERDTreeShowHidden = 1
+let NERDTreeShowLineNumbers = 0
+let NERDTreeMinimalMenu = 1
+nmap <Home> ;Telescope find_files<CR>
+imap <Home> <Esc> ;Telescope find_files<CR>
+imap <PageUp> <C-y>
+set cursorline
+set scrolloff=8
+nmap ; :
+set noerrorbells visualbell t_vb=
+set noswapfile
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+nmap <End> :w<CR>
+imap <End> <Esc>:w<CR>i<Right>
+vmap <End> <Esc>:w<CR>v<Right>
+nmap <F1> :FixWhitespace<CR>
+nmap <F12> :set mouse=a<CR>
+nmap <F11> :set mouse=<CR>
+imap <F1> <Esc> :FixWhitespace<CR>i
+let NERDTreeWinSize = 21
+" Set terminal size
+set splitbelow         " Always split below
+set termguicolors
+set clipboard+=unnamedplus
+let g:airline#extensions#tabline#enabled = 1
+command Autosave autocmd TextChanged * write
+command AutosaveI autocmd TextChangedI * write
+command Autosaveoff autocmd! TextChanged
+nmap <leader>sy :Autosave<cr>
+nmap <leader>sn :Autosaveoff<cr>:AutosaveoffI<cr>
+autocmd FileType tex :set textwidth=75
+autocmd FileType markdown :set textwidth=75
+nmap m :VimtexRefreshFolds<cr>
+autocmd FileType typst :set textwidth=75
+let g:vimtex_indent_on_ampersands = 0
+let g:vimtex_fold_enabled = 1
+let g:vimtex_fold_levelmarker = '§'
+let g:vimtex_fold_manual = 1
+let g:vimtex_fold_types = {
+      \ 'preamble' : {'enabled' : 1},
+      \ 'sections' : {'enabled' : 1},
+      \ 'envs' : { 'enabled' : 1},
+      \ 'epigraphs': { 'enabled': 1},
+      \ }
+let g:vimtex_syntax_packages = {
+      \ 'amsmath': {'conceal': 1, 'load': 2},
+      \ 'babel': {'conceal': 1},
+      \ 'hyperref': {'conceal': 1},
+      \ 'fontawesome5': {'conceal': 1},
+      \}
+set nowrap
+let g:jukit_outhist_new_os_window = 1
+let g:jukit_output_new_os_window = 1
+set backupdir=~/.vim/tmp
+set directory=~/.vim/tmp
+set backup
+let g:jukit_terminal = 'kitty'
+let g:jukit_highlight_markers = 1
+let g:vimtex_view_method = 'zathura'
+let g:vimtex_compiler_progname= '/usr/bin/nvr'
+let g:vimtex_quickfix_enabled = 0
+colorscheme catppuccin

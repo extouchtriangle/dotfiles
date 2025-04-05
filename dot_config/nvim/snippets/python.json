@@ -1,0 +1,11 @@
+{
+  "Sequential": {
+    "prefix": "nnsequen",
+    "description": "Inserts nn.sequential",
+    "body": [
+      "${1:model_name} = nn.Sequential(",
+      "    ${2:layer},$3",
+      ")$4"
+    ]
+  }
+}

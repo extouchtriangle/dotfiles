@@ -1,0 +1,59 @@
+\ProvidesPackage{epd}
+\usepackage{pythontex}
+\usepackage{xstring}
+\usepackage{xifthen}
+\usepackage{color}
+\newif\ifvonbrave\vonbravefalse
+\DeclareOption{brave}{\vonbravetrue}
+\DeclareOption{timid}{\vonbravefalse}
+\DeclareOption{vonmargin}{\enablevonmargins}
+\ProcessOptions\relax
+
+\newcommand{\vonhook}[1]{}
+\newcommand{\vonmarginstyle}{\scriptsize\ttfamily\color{Green}}%
+\newcommand{\enablevonmargins}{%
+  \renewcommand{\vonhook}[1]{\marginpar{\vonmarginstyle{##1}}}}
+
+\begin{pycode}
+import epd.api as api
+\end{pycode}
+\setpythontexoutputdir{.}
+
+\newcommand{\@voncore}[2]{%
+  \ifvonbrave\py{api.get("#2", True).bodies[#1]}%
+  \else\py{api.get("#2", False).bodies[#1]}\fi
+  \vonhook{#2}}% for example a margin par
+\newcommand{\voninclude}[2][0]{\@voncore{#1}{#2}}
+\newcommand{\vonprehook}[1]{}
+\newcommand{\vonposthook}[1]{}
+
+\def\von{\@ifstar\@vonstar\@von}
+\newcommand{\vonenvname}{problem}
+\newcommand{\@von}[2][]{%
+  \ifvonbrave
+    \pyc{entry = api.get("#2", True)}
+  \else
+    \pyc{entry = api.get("#2", False)}
+  \fi
+  \pyc{src = "#1" or "#2"}
+  \begin{\vonenvname}[\py{(r'\href{' + entry.url + '}{' + src + '}') if entry.url is not None else src}]%
+    \vonprehook{#2}
+    \voninclude{#2}%
+    \vonposthook{#2}
+  \end{\vonenvname}%
+}
+\newcommand{\@vonstar}[1]{%
+  \begin{\vonenvname}
+    \vonprehook{#1}
+    \voninclude{#1}
+    \vonposthook{#1}
+  \end{\vonenvname}
+  }
+\newcommand{\vonsol}[1]{
+    \voninclude[1]{#1}
+}
+\newcommand{\epdsol}[1]{
+    \voninclude[1]{#1}
+}
+
+\newcommand{\epdpuid}[1]{\py{api.get_puid("#1")}}
