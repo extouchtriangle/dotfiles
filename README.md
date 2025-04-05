@@ -34,11 +34,13 @@ for my profile.
 
 To see why, here is what would have happened if I
 had not omitted this repo:
+
 <a href="https://github.com/extouchtriangle?tab=repositories">
 <img height=200 align="center" src="https://extouchtriangle-readme-stats.vercel.app/api/top-langs/?username=extouchtriangle&theme=tokyonight&show_icons=true&border_color=43c2b2&layout=donut" />
 </a>
 
 Meanwhile, my profile says (without this repo):
+
 <a href="https://github.com/extouchtriangle?tab=repositories">
 <img height=200 align="center" src="https://extouchtriangle-readme-stats.vercel.app/api/top-langs/?username=extouchtriangle&theme=tokyonight&show_icons=true&border_color=43c2b2&layout=donut&exclude_repo=dotfiles" />
 </a>
