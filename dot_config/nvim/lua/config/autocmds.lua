@@ -18,3 +18,4 @@ augroup END
 autocmd vimrc BufNewFile,BufRead *.tsqx setfiletype tsqx
 autocmd vimrc BufRead *.tex syntax off " We don't need syntax when we have treesitter
 ]])
+require("lspconfig").arduino_language_server.setup({})

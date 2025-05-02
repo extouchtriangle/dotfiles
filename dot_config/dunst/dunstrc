@@ -253,15 +253,18 @@
 [urgency_low]
 background = "#1e1e2e"
 foreground = "#cdd6f4"
+timeout = 1000
 
 [urgency_normal]
 background = "#1e1e2e"
 foreground = "#cdd6f4"
+timeout = 1000
 
 [urgency_critical]
 background = "#1e1e2e"
 foreground = "#cdd6f4"
 frame_color = "#fab387"
+timeout = 1000
 # Every section that isn't one of the above is interpreted as a rules to
 # override settings for certain messages.
 #

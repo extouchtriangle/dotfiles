@@ -1,5 +1,4 @@
 accessibility-inspector
-ack
 acpi
 adobe-source-han-sans-cn-fonts
 adobe-source-han-sans-tw-fonts
@@ -9,6 +8,8 @@ angelfish
 apache
 arandr
 archlinux-wallpaper
+arduino-cli
+arduino-ide
 aria2
 arianna
 ark
@@ -57,6 +58,7 @@ cowsay
 cppdap
 cups
 dex
+discord
 dmenu
 dotnet-runtime
 dotnet-sdk
@@ -87,10 +89,9 @@ fzf
 garcon
 gedit
 gedit-plugins
-ghostpcl
+geogebra
 ghostty
 ghostwriter
-ghostxps
 gimp
 git
 git-lfs
@@ -107,6 +108,7 @@ go
 gperf
 gpick
 granatier
+grub
 guake
 gucharmap
 gummi
@@ -114,6 +116,7 @@ guvcview
 gvim
 gxkb
 haruna
+haskell-lift-type
 hddtemp
 helix
 hplip
@@ -217,6 +220,7 @@ kollision
 kolourpaint
 kompare
 kongress
+konqueror
 konquest
 konsole
 kontrast
@@ -265,6 +269,7 @@ lximage-qt
 lxqt-policykit
 lynx
 maim
+man-pages
 marble
 markdownpart
 massif-visualizer
@@ -392,7 +397,6 @@ rubber
 ruby
 ruby-build
 ruff
-rust
 sakura
 screenfetch
 signon-kwallet-extension
@@ -417,6 +421,7 @@ tectonic
 telly-skout
 termdown
 terminator
+texlab
 texworks
 thunar
 thunar-volman
@@ -451,6 +456,7 @@ usbutils
 uthash
 uucp
 vale
+valkey
 vault
 vi
 vim-powerline

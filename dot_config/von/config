@@ -70,4 +70,6 @@ tag_hint_text: |
 
 # Name of text editor to invoke
 # By default, it detects from $EDITOR automatically
-# editor: vim
+# editor: code
+abbreviations:
+  ELMO Shortlist: ESL

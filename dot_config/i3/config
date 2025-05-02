@@ -38,8 +38,8 @@ set $mantle #181825
 set $crust #11111b
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:maple mono 15
-exec_always --no-startup-id exec ~/.local/bin/i3-workspace-names-daemon -d ❘
+font pango:maple mono nf 15
+exec_always --no-startup-id exec ~/.local/bin/i3-workspace-names-daemon
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 exec_always --no-startup-id picom --experimental-backends -b
 exec_always --no-startup-id killall conky
@@ -233,7 +233,7 @@ bindsym $mod+r mode "resize"
 bar {
   id top-bar
   position top
-  font pango:maple mono, Font Awesome 6 Free 13
+  font pango:fira code, Font Awesome 6 Free 13
   strip_workspace_numbers no
   tray_output primary
   status_command py3status -c ~/.config/py3status/main.conf

@@ -14,5 +14,5 @@ $pdf_mode = 4;
 $failure_cmd = 'echo -e "\\033[1;31m---- BEGIN ERROR LOG %T ----\\033[1;37m"; '
     . 'grep -A 5 "^! " %R.log; '
     . 'echo -e "\\033[1;31m---- END ERROR LOG %T ----\\033[0m"; ';
-$pdf_previewer = "zathura %O %S &> /dev/null &";
+$pdf_previewer = "evince %O %S &> /dev/null &";
 $lualatex = 'lualatex -synctex=1'

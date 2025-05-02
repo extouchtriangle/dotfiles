@@ -22,6 +22,10 @@ function zath
     sleep 0.2
     xdotool key s
 end
+function ev
+    evince $argv &
+    disown %1
+end
 function fish_prompt
     set last_status $status
     if set -q SUDO_USER
@@ -135,9 +139,9 @@ alias journal='nvim -c Journal'
 # Added by LM Studio CLI (lms)
 set -gx PATH $PATH $HOME/.lmstudio/bin
 # Abbreviations
-abbr s sudo pacman -S
+abbr s yesman -S
 abbr S pikaur -S
-abbr syu sudo pacman -Syu
+abbr syu yesman -Syu
 abbr Syu pikaur -Syu
 abbr pvc latexmk -pvc -cd
 abbr pv latexmk -pv -cd
@@ -178,3 +182,4 @@ starship init fish | source
 alias dotfiles="tmux attach -t dotfiles"
 alias otis="tmux attach -t otis"
 alias orb="tmux attach -t orbslam"
+alias codium="DONT_PROMPT_WSL_INSTALL=1 vscodium"

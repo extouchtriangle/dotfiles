@@ -10,6 +10,40 @@
    text: (curly_group
           "\}"@punctuation.brackets))
  (#set! conceal ""))
+("\\begin" @module (#set! conceal "⏵"))
+("\\end" @module (#set! conceal "⏴"))
+((generic_environment
+   begin: (begin (curly_group_text
+          "\{"@punctuation.brackets))
+ (#set! conceal " ")))
+((generic_environment
+   end: (end (curly_group_text
+          "\{"@punctuation.brackets))
+ (#set! conceal " ")))
+((generic_environment
+   begin: (begin (curly_group_text
+          "\}"@punctuation.brackets))
+ (#set! conceal "")))
+((generic_environment
+   end: (end (curly_group_text
+          "\}"@punctuation.brackets))
+ (#set! conceal "")))
+((asy_environment
+   begin: (begin (curly_group_text
+          "\{"@punctuation.brackets))
+ (#set! conceal " ")))
+((asy_environment
+   end: (end (curly_group_text
+          "\{"@punctuation.brackets))
+ (#set! conceal " ")))
+((asy_environment
+   begin: (begin (curly_group_text
+          "\}"@punctuation.brackets))
+ (#set! conceal "")))
+((asy_environment
+   end: (end (curly_group_text
+          "\}"@punctuation.brackets))
+ (#set! conceal "")))
 ("\\subsection" @module (#set! conceal "‡"))
 ((subsection
    text: (curly_group
@@ -345,3 +379,10 @@
     ) @markup.math (#eq? @markup.math "\\frac{2}{5}") (#set! conceal "⅖") )
 ( (generic_command
     ) @markup.math (#eq? @markup.math "\\frac{5}{6}") (#set! conceal "⅚") )
+( (generic_command
+    ) @markup.math (#eq? @markup.math "\\cap") (#set! conceal "∩") )
+( (generic_command
+    ) @markup.math (#eq? @markup.math "\\cup") (#set! conceal "∪") )
+( (generic_command
+    ) @markup.math (#eq? @markup.math "\\angle") (#set! conceal "∠") )
+

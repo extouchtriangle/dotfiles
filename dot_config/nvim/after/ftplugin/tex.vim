@@ -1,1 +1,2 @@
-syntax off
+"syntax off
+syntax on

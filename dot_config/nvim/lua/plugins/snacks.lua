@@ -19,7 +19,7 @@ return {
           backdrop = { transparent = false },
         },
       },
-      scroll = { enabled = true },
+      scroll = { enabled = false },
       notifier = { enabled = false },
     },
   },
