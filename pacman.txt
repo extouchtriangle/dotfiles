@@ -249,7 +249,6 @@ kwave
 kwordquiz
 lapce
 lazygit
-lib32-mesa
 libc++
 libreoffice-fresh
 lightdm
@@ -408,7 +407,6 @@ slock
 speedtest-cli
 stack
 starship
-steam
 step
 subversion
 sudo

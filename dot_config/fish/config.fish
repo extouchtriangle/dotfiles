@@ -115,7 +115,6 @@ end
 function nvid
     daemonize -c $PWD /usr/bin/neovide $argv && exit
 end
-alias pip='~/.local/bin/pip'
 alias icat='kitten icat'
 
 # Added by `rbenv init` on Tue Dec 24 10:17:51 AM EST 2024
@@ -183,3 +182,8 @@ alias dotfiles="tmux attach -t dotfiles"
 alias otis="tmux attach -t otis"
 alias orb="tmux attach -t orbslam"
 alias codium="DONT_PROMPT_WSL_INSTALL=1 vscodium"
+function wifi-on
+    iwctl adapter phy0 set-property Powered on
+    iwctl device wlan0 set-property Powered on
+    rfkill unblock all
+end

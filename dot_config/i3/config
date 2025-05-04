@@ -5,6 +5,10 @@
 # this file and re-run i3-config-wizard(1).
 #
 
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && $refresh_i3status
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 # i3 config file (v4)
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
@@ -39,9 +43,9 @@ set $crust #11111b
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:maple mono nf 15
-exec_always --no-startup-id exec ~/.local/bin/i3-workspace-names-daemon
+exec_always --no-startup-id exec i3-workspace-names-daemon
 exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
-exec_always --no-startup-id picom --experimental-backends -b
+exec_always --no-startup-id picom -b
 exec_always --no-startup-id killall conky
 exec_always --no-startup-id bash ~/.config/conky/run-conky.sh
 exec_always --no-startup-id flameshot
@@ -69,7 +73,6 @@ exec --no-startup-id nm-applet
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 py3status
 bindsym $auxmod+shift+r exec $refresh_i3status
-bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 bindsym $auxmod+x exec zathura ~/otis-handouts/Excerpts.pdf
@@ -429,10 +432,4 @@ mode "term" {
 bindsym $mod+t exec --no-startup-id bash $HOME/.config/i3/reminder-term.sh, mode "term"
 # }}}
 #
-mode "audio" {
-  bindsym shift+plus exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-  bindsym minus exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
-  bindsym 0 exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
-  bindsym Escape mode "default"
-}
 bindsym $mod+u exec --no-startup-id bash $HOME/.config/i3/reminder-audio.sh, mode "audio"
