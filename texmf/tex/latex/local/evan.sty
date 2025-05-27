@@ -279,6 +279,10 @@
 \newcommand{\plusemail}[1]{\\ \normalfont \texttt{\mailto{#1}}}
 
 %More commands and math operators
+%
+\usepackage[dvipsnames]{xcolor}
+\definecolor{CtpRed}{HTML}{f38ba8}
+\definecolor{CtpSapphire}{HTML}{74c7ec}
 \DeclareMathOperator{\cis}{cis}
 \DeclareMathOperator*{\lcm}{lcm}
 \DeclareMathOperator*{\argmin}{arg min}
@@ -414,7 +418,8 @@
 \usepackage{asymptote}
 \fi
 \begin{asydef}
-  defaultpen(fontsize(10pt));
+  import catppuccin;
+  defaultpen(fontsize(10pt)+text);
   size(10cm); // set a reasonable default
   usepackage("amsmath");
   usepackage("amssymb");
@@ -568,12 +573,12 @@
   leftline=true,
   topline=false,
   bottomline=false,
-  linecolor=ForestGreen,
-  backgroundcolor=ForestGreen!5,
+  linecolor=CtpGreen,
+  backgroundcolor=CtpGreen!10!CtpBase,
 }
 \declaretheoremstyle[
-  headfont=\bfseries\sffamily\color{ForestGreen!70!black},
-  bodyfont=\normalfont,
+  headfont=\bfseries\sffamily\color{CtpGreen},
+  bodyfont=\normalfont\color{CtpText},
   spaceabove=2pt,
   spacebelow=1pt,
   mdframed={style=mdgreenbox},

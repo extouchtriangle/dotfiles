@@ -1,0 +1,254 @@
+// This file is parsed with a custom JSONC parser.
+// Don't expect every JSONC feature in... say, vscode, to work.
+{
+    "ai": {
+        "defaultGPTProvider": "ollama_llama_3_2",
+        "defaultTemperature": 0.5,
+        "enhancements": true,
+        "charsEachUpdate": 50,
+        "keep_alive": -1,
+        "useHistory": false,
+        "safety": true,
+        "writingCursor": " ...",
+        "proxyUrl": null,
+        "extraGptModels": {
+            "model_id": {}
+        }
+    },
+    "animations": {
+        "choreographyDelay": 35,
+        "durationSmall": 110,
+        "durationLarge": 180
+    },
+    "appearance": {
+        "autoDarkMode": {
+            "enabled": false,
+            "from": "18:10",
+            "to": "6:10"
+        },
+        "borderless": true,
+        "keyboardUseFlag": false,
+        "layerSmoke": true,
+        "layerSmokeStrength": 0.2,
+        "barRoundCorners": 1,
+        "fakeScreenRounding": 1
+    },
+    "apps": {
+        "bluetooth": "blueberry",
+        "imageViewer": "loupe",
+        "network": "XDG_CURRENT_DESKTOP=\"gnome\" gnome-control-center wifi",
+        "settings": "XDG_CURRENT_DESKTOP=\"gnome\" gnome-control-center",
+        "taskManager": "gnome-usage",
+        "terminal": "kitty"
+    },
+    "bar": {
+        "alwaysShowFullResources": false,
+        "modes": [
+            "normal"
+        ]
+    },
+    "battery": {
+        "low": 20,
+        "critical": 10,
+        "warnLevels": [
+            20,
+            15,
+            5
+        ],
+        "warnTitles": [
+            "Low battery",
+            "Very low battery",
+            "Critical Battery"
+        ],
+        "warnMessages": [
+            "Plug in the charger",
+            "You there?",
+            "PLUG THE CHARGER ALREADY"
+        ],
+        "suspendThreshold": 3
+    },
+    "brightness": {
+        "controllers": {
+            "default": "auto"
+        }
+    },
+    "cheatsheet": {
+        "keybinds": {
+            "configPath": ""
+        }
+    },
+    "gaming": {
+        "crosshair": {
+            "size": 20,
+            "color": "rgba(113,227,32,0.9)"
+        }
+    },
+    "i18n": {
+        "langCode": "en_US",
+        "extraLogs": false
+    },
+    "monitors": {
+        "scaleMethod": "division"
+    },
+    "music": {
+        "preferredPlayer": "plasma-browser-integration"
+    },
+    "onScreenKeyboard": {
+        "layout": "dvorak"
+    },
+    "overview": {
+        "scale": 0.18,
+        "numOfRows": 2,
+        "numOfCols": 5,
+        "wsNumScale": 0.09,
+        "wsNumMarginScale": 0.07
+    },
+    "sidebar": {
+        "image": {
+            "columns": 2,
+            "batchCount": 20,
+            "allowNsfw": false
+        },
+        "pages": {
+            "order": [
+                "tools"
+            ],
+            "defaultPage": "tools",
+            "apis": {
+                "order": [
+                    "gemini",
+                    "gpt",
+                    "waifu",
+                    "booru"
+                ],
+                "defaultPage": "gemini"
+            }
+        },
+        "quickToggles": {
+            "order": [
+                "wifi",
+                "bluetooth",
+                "nightlight",
+                "gamemode",
+                "idleinhibitor",
+                "cloudflarewarp"
+            ]
+        },
+        "calendar": {
+            "expandByDefault": true
+        }
+    },
+    "search": {
+        "enableFeatures": {
+            "actions": true,
+            "commands": true,
+            "mathResults": true,
+            "directorySearch": true,
+            "webSearch": true
+        },
+        "engineBaseUrl": "https://www.duckduckgo.com/search?q=",
+        "excludedSites": [
+            "quora.com"
+        ]
+    },
+    "time": {
+        "format": "%I:%M:%S %P",
+        "interval": 500,
+        "dateFormatLong": "%A, %m/%d",
+        "dateInterval": 5000,
+        "dateFormat": "%d/%m",
+        "calendarDateFormat": "%d %B %Y"
+    },
+    "weather": {
+        "preferredUnit": "C",
+        "city": "Plainsboro"
+    },
+    "workspaces": {
+        "shown": 10
+    },
+    "dock": {
+        "enabled": false,
+        "hiddenThickness": 5,
+        "pinnedApps": [
+            "firefox",
+            "thunar",
+            "kitty"
+        ],
+        "layer": "top",
+        "monitorExclusivity": true,
+        "searchPinnedAppIcons": false,
+        "trigger": [
+            "client-added",
+            "client-removed"
+        ],
+        "autoHide": [
+            {
+                "trigger": "client-added",
+                "interval": 500
+            },
+            {
+                "trigger": "client-removed",
+                "interval": 500
+            }
+        ]
+    },
+    "icons": {
+        "searchPaths": [
+            ""
+        ],
+        "symbolicIconTheme": {
+            "dark": "Adwaita",
+            "light": "Adwaita"
+        },
+        "substitutions": {
+            "code-url-handler": "visual-studio-code",
+            "Code": "visual-studio-code",
+            "GitHub Desktop": "github-desktop",
+            "Minecraft* 1.20.1": "minecraft",
+            "gnome-tweaks": "org.gnome.tweaks",
+            "pavucontrol-qt": "pavucontrol",
+            "wps": "wps-office2019-kprometheus",
+            "wpsoffice": "wps-office2019-kprometheus",
+            "footclient": "foot",
+            "zen": "zen-browser",
+            "": "image-missing"
+        },
+        "regexSubstitutions": [
+            {
+                "regex": "/^steam_app_(\\d+)$/",
+                "replace": "steam_icon_$1"
+            }
+        ]
+    },
+    "keybinds": {
+        "overview": {
+            "altMoveLeft": "Ctrl+B",
+            "altMoveRight": "Ctrl+F",
+            "deleteToEnd": "Ctrl+K"
+        },
+        "sidebar": {
+            "apis": {
+                "nextTab": "Page_Down",
+                "prevTab": "Page_Up"
+            },
+            "options": {
+                "nextTab": "Page_Down",
+                "prevTab": "Page_Up"
+            },
+            "expand": "Ctrl+E",
+            "pin": "Ctrl+P",
+            "cycleTab": "Ctrl+Tab",
+            "nextTab": "Ctrl+Page_Down",
+            "prevTab": "Ctrl+Page_Up"
+        },
+        "cheatsheet": {
+            "keybinds": {
+                "nextTab": "Page_Down",
+                "prevTab": "Page_Up"
+            },
+            "nextTab": "Ctrl+Page_Down",
+            "prevTab": "Ctrl+Page_Up",
+            "cycleTab": "Ctrl+Tab"
+        }
+    }
+}

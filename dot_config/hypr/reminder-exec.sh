@@ -1,16 +1,11 @@
 #!/usr/bin/env bash
 
-notify-send "Hyprland: exec mode" -i "/home/easton/.config/hypr/logo.png" \
+notify-send "Hyprland: exec" -i "/home/easton/.config/hypr/logo.png" \
   -t 4000 \
   -u low \
-  "<b>=</b>: screenshot      <b>a</b>: Asy
-<b>b</b>: liBreoffice      <b>c</b>: Card vault
-<b>f</b>: firefox          <b>g</b>: Geogebra
-<b>h</b>: cHromium         <b>i</b>: anki
-<b>m</b>: gnucash          <b>n</b>: vit
-<b>o</b>: OBS              <b>p</b>: Pass vault
-<b>r</b>: oRch             <b>s</b>: Spotify
-<b>t</b>: oTis             <b>x</b>: qutebrowser
-<b>y</b>: diarY            <b>z</b>: Zoom
-<b>Space</b>: loginctl lock
+  "
+<b>f</b>: firefox       <b>g</b>: Geogebra
+<b>b</b>: blueberry  <b>x</b>: qutebrowser
+<b>s</b>: grimblast         <b>z</b>: Zoom
+<b>n</b>: neovide       <b>Space</b>: lock
 "

@@ -427,6 +427,7 @@ mode "term" {
   bindsym c exec kitty -d ~/.local/share/chezmoi/, mode "default"
   bindsym p exec kitty -d ~/readinglist/, mode "default"
   bindsym t exec kitty -d /tmp/, mode "default"
+  bindsym Space exec bash ~/sh-scripts/lock.sh
   bindsym Escape mode "default"
 }
 bindsym $mod+t exec --no-startup-id bash $HOME/.config/i3/reminder-term.sh, mode "term"

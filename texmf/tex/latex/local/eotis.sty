@@ -80,10 +80,10 @@ Each problem is worth $7$ points.}
 \newcommand{\theart}[1]{\includegraphics[width=4em]{#1}}
 
 \ifotishandout
-\newcommand{\club}[2]{\color{#1}{[$#2\clubsuit$]}}
-\newcommand{\clubs}[1]{\club{CtpSapphire}{#1}}
-\newcommand{\clubr}[1]{\club{CtpRed!70!white}{#1}}
-\newcommand{\clubg}[1]{\club{CtpGreen}{#1}}
+\newcommand{\club}[2]{\bgroup \color{#1}[$#2\clubsuit$]\egroup}
+\newcommand{\clubs}[1]{\club{blue!70!black}{#1}}
+\newcommand{\clubr}[1]{\club{red!80!black}{#1}}
+\newcommand{\clubg}[1]{\club{green!40!black}{#1}}
 \newcommand{\clubc}[1]{\club{cyan}{#1}}
 %\newcommand{\goal}[1]{Solve at least \clubg{#1} (more if you have time),
 %  including any problem marked in {\color{red} red}.}
@@ -100,19 +100,19 @@ Each problem is worth $7$ points.}
 \newcommand{\addM}{\addtocounter{clubcounter}{3}}
 \newcommand{\addH}{\addtocounter{clubcounter}{5}}
 \newcommand{\addZ}{\addtocounter{clubcounter}{9}}
-\newtheorem*{probE}{\clubs{2} {\color{CtpSapphire!30!white}Problem}}
-\newtheorem*{probM}{\clubs{3} {\color{CtpSapphire!30!white}Problem}}
-\newtheorem*{probH}{\clubs{5} {\color{CtpSapphire!30!white}Problem}}
-\newtheorem*{probZ}{\clubs{9} {\color{CtpSapphire!30!white}Problem}}
-\newtheorem*{probER}{\clubr{2} {\color{CtpRed!70!white}Required Problem}}
-\newtheorem*{probMR}{\clubr{3} {\color{CtpRed!70!white}Required Problem}}
-\newtheorem*{probHR}{\clubr{5} {\color{CtpRed!70!white}Required Problem}}
-\newtheorem*{probZR}{\clubr{9} {\color{CtpRed!70!white}Required Problem}}
-\newtheorem*{probSurvey}{\clubs{1} {\color{CtpSapphire!50!white}Mini Survey}}
-\newtheorem{probJ}[probOTIS]{\clubc{17} \color{CtpSapphire!30!white}Problem}
-\newtheorem{probK}[probOTIS]{\clubc{33} \color{CtpSapphire!30!white}Problem}
-\newtheorem{probL}[probOTIS]{\clubc{65} \color{CtpSapphire!30!white}Problem}
-\newtheorem{probO}[probOTIS]{\color{CtpSapphire!30!white}Problem}
+\newtheorem*{probE}{\clubs{2} {\color{blue!20!black}Problem}}
+\newtheorem*{probM}{\clubs{3} {\color{blue!20!black}Problem}}
+\newtheorem*{probH}{\clubs{5} {\color{blue!20!black}Problem}}
+\newtheorem*{probZ}{\clubs{9} {\color{blue!20!black}Problem}}
+\newtheorem*{probER}{\clubr{2} {\color{purple!20!black}Required Problem}}
+\newtheorem*{probMR}{\clubr{3} {\color{purple!20!black}Required Problem}}
+\newtheorem*{probHR}{\clubr{5} {\color{purple!20!black}Required Problem}}
+\newtheorem*{probZR}{\clubr{9} {\color{purple!20!black}Required Problem}}
+\newtheorem*{probSurvey}{\clubs{1} {\color{blue!20!black}Mini Survey}}
+\newtheorem{probJ}[probOTIS]{\clubc{17} \color{blue!20!black}Problem}
+\newtheorem{probK}[probOTIS]{\clubc{33} \color{blue!20!black}Problem}
+\newtheorem{probL}[probOTIS]{\clubc{65} \color{blue!20!black}Problem}
+\newtheorem{probO}[probOTIS]{\color{blue!20!black}Problem}
 \newcommand{\enadZR}{
 \end{probZR} \addZ}
 \newcommand{\enadHR}{

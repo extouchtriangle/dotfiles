@@ -1,36 +1,25 @@
 {
-  "OTIS Clubs": {
-    "prefix": "points",
-    "description": "Adds points to the club counter.",
+  "OTIS Template": {
+    "prefix": "otistemp",
+    "description": "Template for OTIS submission",
     "body": [
-      "\\addtocounter{clubcounter}{${1:Point Value}}"
-    ]
-  },
-  "Proof": {
-    "prefix": "proof",
-    "description": "Inserts a proof environment",
-    "body": [
-      "\\begin{proof}",
-      "  ${1:Content}",
-      "\\end{proof}$2"
-    ]
-  },
-  "Theorem": {
-    "prefix": "theorem",
-    "description": "Inserts a theorem environment",
-    "body": [
-      "\\begin{theorem}",
-      "  ${1:Content}",
-      "\\end{theorem}$2"
-    ]
-  },
-  "Claim": {
-    "prefix": "claim",
-    "description": "Inserts a claim environment",
-    "body": [
-      "\\begin{claim*}",
-      "  ${1:Content}",
-      "\\end{claim*}$2"
+      "\\documentclass[11pt]{scrartcl}",
+      "\\usepackage[extouchtriangle]{extouchtriangle}",
+      "\\usepackage[brave]{von}",
+      "\\usepackage[handout]{eotis}",
+      "\\begin{document}",
+      "\\title{${1:YOUR UNIT HERE}}",
+      "\\subtitle{Solutions to Selected Problems}",
+      "\\maketitle",
+      "\\eartwork{${2:IMAGE NAME HERE}.png}{${3:AUTHOR NAME HERE}}",
+      "\\pagebreak",
+      "\\tableofcontents",
+      "\\pagebreak",
+      "\\section{Mini-Survey}",
+      "\\printsurvey",
+      "I solved this in the submission form.",
+      "\\isolved",
+      "\\end{document}"
     ]
   }
 }

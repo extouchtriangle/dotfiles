@@ -1,6 +1,5 @@
 ;extends
 ("\\item" @punctuation.special (#set! conceal "•"))
-("\\ii" @punctuation.special (#set! conceal "•"))
 ("\\section" @module (#set! conceal "§"))
 ((section
    text: (curly_group

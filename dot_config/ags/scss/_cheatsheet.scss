@@ -1,0 +1,219 @@
+.cheatsheet-bg {
+  @include large-rounding;
+  @include elevation-border;
+  @include elevation2;
+  margin-bottom: 0.682rem;
+  background-color: $layer0;
+  padding: 1.364rem;
+}
+
+.cheatsheet-title {
+  color: $cheatsheetTitle;
+}
+
+.cheatsheet-bind-lineheight {
+  min-height: 2.045rem;
+}
+
+.cheatsheet-key {
+  @include techfont;
+  min-height: 1.364rem;
+  min-width: 1.364rem;
+  margin: 0.17rem;
+  padding: 0.136rem 0.205rem;
+  -gtk-outline-radius: 0.409rem;
+  color: $cheatsheetTitle;
+  border-radius: 0.409rem;
+  border: 0.068rem solid $cheatsheetTitle;
+  box-shadow: 0rem 0.136rem 0rem $cheatsheetTitle;
+}
+
+.cheatsheet-key-notkey {
+  min-height: 1.364rem;
+  padding: 0.136rem 0.205rem;
+  margin: 0.17rem;
+  color: $onLayer0;
+}
+
+@for $i from 1 through 8 {
+  .cheatsheet-color-#{$i} {
+    color: nth($cheatsheetColors, $i);
+    border-color: nth($cheatsheetColors, $i);
+    box-shadow: 0rem 0.136rem 0rem nth($cheatsheetColors, $i);
+  }
+}
+
+// .cheatsheet-action {}
+
+.cheatsheet-closebtn {
+  @include element_decel;
+  @include full-rounding;
+  min-width: 2.386rem;
+  min-height: 2.386rem;
+}
+
+.cheatsheet-closebtn:hover,
+.cheatsheet-closebtn:focus {
+  background-color: $layer0Hover;
+}
+
+.cheatsheet-closebtn:active {
+  background-color: $layer0Active;
+}
+
+.cheatsheet-category-title {
+  @include titlefont;
+  font-size: 1.705rem;
+}
+
+@mixin cheatsheet-periodictable-element {
+  min-width: 5.455rem;
+  min-height: 5.455rem;
+  @include small-rounding;
+  background-color: $layer1;
+  color: $onLayer1;
+}
+
+.cheatsheet-periodictable-elementsymbol {
+  @include readingfont;
+  font-size: 1.705rem;
+  font-weight: bold;
+}
+
+.cheatsheet-periodictable-elementnum {
+  @include full-rounding;
+  min-width: 1.364rem;
+  min-height: 1.364rem;
+  background-color: $term0;
+  color: $onBackground;
+}
+
+// $coloralkali: rgb(243, 139, 168);
+// $coloralkaline: rgb(250, 179, 135);
+// $colormetal: rgb(249, 226, 175);
+// $colornonmetal: rgb(116, 199, 236);
+// $colornoblegas: rgb(203, 166, 247);
+// $colorlanthanum: rgb(245, 194, 231);
+// $coloractinium: #b4befe;
+// $colorpostmetal: rgb(166, 227, 161);
+// $colorsemi: rgb(148, 226, 213);
+
+$coloralkali: $term1;
+$coloralkaline: $term2;
+$colormetal: $term3;
+$colornonmetal: $term4;
+$colornoblegas: $term5;
+$colorlanthanum: $term6;
+$coloractinium: $term7;
+$colorpostmetal: $term8;
+$colorsemi: $term10;
+.cheatsheet-periodictable-empty {
+  @include small-rounding;
+  min-width: 5.455rem;
+  min-height: 5.455rem;
+}
+
+.cheatsheet-periodictable-metal {
+  @include cheatsheet-periodictable-element;
+  background-color: $colormetal;
+  color: $term0;
+}
+
+.cheatsheet-periodictable-nonmetal {
+  @include cheatsheet-periodictable-element;
+  background-color: $colornonmetal;
+  color: $term0;
+}
+
+.cheatsheet-periodictable-noblegas {
+  @include cheatsheet-periodictable-element;
+  background-color: $colornoblegas;
+  color: $term0;
+}
+.cheatsheet-periodictable-postmetal {
+  @include cheatsheet-periodictable-element;
+  background-color: $colorpostmetal;
+  color: $term0;
+}
+
+.cheatsheet-periodictable-lanthanum {
+  @include cheatsheet-periodictable-element;
+  background-color: $colorlanthanum;
+  color: $term0;
+}
+.cheatsheet-periodictable-semi {
+  @include cheatsheet-periodictable-element;
+  background-color: $colorsemi;
+  color: $term0;
+}
+
+.cheatsheet-periodictable-actinium {
+  @include cheatsheet-periodictable-element;
+  background-color: $coloractinium;
+  color: $term0;
+}
+.cheatsheet-periodictable-alkali {
+  @include cheatsheet-periodictable-element;
+  background-color: $coloralkali;
+  color: $term0;
+}
+.cheatsheet-periodictable-alkaline {
+  @include cheatsheet-periodictable-element;
+  background-color: $coloralkaline;
+  color: $term0;
+}
+
+.cheatsheet-periodictable-legend-color-wrapper {
+  @include full-rounding;
+  padding: 0.273rem;
+  border: 0.136rem solid $onLayer0;
+}
+
+@mixin cheatsheet-periodictable-legend-color {
+  @include full-rounding;
+  min-width: 1.023rem;
+  min-height: 1.023rem;
+}
+
+.cheatsheet-periodictable-legend-color-metal {
+  @include cheatsheet-periodictable-legend-color;
+  background-color: $colormetal;
+}
+
+.cheatsheet-periodictable-legend-color-nonmetal {
+  @include cheatsheet-periodictable-legend-color;
+  background-color: $colornonmetal;
+}
+
+.cheatsheet-periodictable-legend-color-noblegas {
+  @include cheatsheet-periodictable-legend-color;
+  background-color: $colornoblegas;
+}
+
+.cheatsheet-periodictable-legend-color-lanthanum {
+  @include cheatsheet-periodictable-legend-color;
+  background-color: $colorlanthanum;
+}
+
+.cheatsheet-periodictable-legend-color-actinium {
+  @include cheatsheet-periodictable-legend-color;
+  background-color: $coloractinium;
+}
+.cheatsheet-periodictable-legend-color-alkali {
+  @include cheatsheet-periodictable-legend-color;
+  background-color: $coloralkali;
+}
+.cheatsheet-periodictable-legend-color-alkaline {
+  @include cheatsheet-periodictable-legend-color;
+  background-color: $coloralkaline;
+}
+
+.cheatsheet-periodictable-legend-color-postmetal {
+  @include cheatsheet-periodictable-legend-color;
+  background-color: $colorpostmetal;
+}
+
+.cheatsheet-periodictable-legend-color-semi {
+  @include cheatsheet-periodictable-legend-color;
+  background-color: $colorsemi;
+}
