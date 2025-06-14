@@ -1,8 +1,6 @@
 if status is-interactive
     export PATH=/usr/local/texlive/2024/bin/x86_64-linux:/usr/local/texlive/2024/bin/x86_64-linux:/usr/condabin:/sbin:/bin:/usr/bin:/usr/local/bin:/usr/local/sbin:/opt/cuda/bin:/opt/cuda/nsight_compute:/opt/cuda/nsight_systems/bin:/var/lib/flatpak/exports/bin:/usr/lib/jvm/default/bin:/usr/bin/site_perl:/usr/bin/vendor_perl:/usr/bin/core_perl:$HOME/.local/bin:$HOME/.local/share/gem/ruby/3.2.0/bin:$HOME/.py-prompts:/root/.local/bin:$HOME/.local/share/gem/ruby/3.3.0/bin:$HOME/.gem/ruby/3.3.0/bin:/var/lib/snapd/snap/bin
-    if test -f ~/.cache/ags/user/generated/terminal/sequences.txt
-        cat ~/.cache/ags/user/generated/terminal/sequences.txt
-    end
+    cat ~/.local/state/quickshell/user/generated/terminal/sequences.txt
 end
 export VISUAL=nvim
 export TERMINAL=kitty
@@ -12,6 +10,8 @@ export EDITOR="$VISUAL"
 set PATH $PATH $HOME/.local/bin
 set PATH $PATH $HOME/.local/share/gem/ruby/3.2.0/bin
 # TokyoNight Color Palette
+export CC=/sbin/gcc
+export CXX=/sbin/g++
 
 alias i3conf="nvim -c 'ChezmoiEdit ~/.config/i3/config'"
 alias fishconf="nvim -c 'ChezmoiEdit ~/.config/fish/config.fish'"
@@ -387,3 +387,4 @@ complete -c eww -n "__fish_seen_subcommand_from help; and not __fish_seen_subcom
 complete -c eww -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from shell-completions; and not __fish_seen_subcommand_from daemon; and not __fish_seen_subcommand_from logs; and not __fish_seen_subcommand_from ping; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from inspector; and not __fish_seen_subcommand_from open; and not __fish_seen_subcommand_from open-many; and not __fish_seen_subcommand_from close; and not __fish_seen_subcommand_from reload; and not __fish_seen_subcommand_from kill; and not __fish_seen_subcommand_from close-all; and not __fish_seen_subcommand_from state; and not __fish_seen_subcommand_from get; and not __fish_seen_subcommand_from list-windows; and not __fish_seen_subcommand_from active-windows; and not __fish_seen_subcommand_from debug; and not __fish_seen_subcommand_from graph; and not __fish_seen_subcommand_from help" -f -a debug -d 'Print out the widget structure as seen by eww'
 complete -c eww -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from shell-completions; and not __fish_seen_subcommand_from daemon; and not __fish_seen_subcommand_from logs; and not __fish_seen_subcommand_from ping; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from inspector; and not __fish_seen_subcommand_from open; and not __fish_seen_subcommand_from open-many; and not __fish_seen_subcommand_from close; and not __fish_seen_subcommand_from reload; and not __fish_seen_subcommand_from kill; and not __fish_seen_subcommand_from close-all; and not __fish_seen_subcommand_from state; and not __fish_seen_subcommand_from get; and not __fish_seen_subcommand_from list-windows; and not __fish_seen_subcommand_from active-windows; and not __fish_seen_subcommand_from debug; and not __fish_seen_subcommand_from graph; and not __fish_seen_subcommand_from help" -f -a graph -d 'Print out the scope graph structure in graphviz dot format'
 complete -c eww -n "__fish_seen_subcommand_from help; and not __fish_seen_subcommand_from shell-completions; and not __fish_seen_subcommand_from daemon; and not __fish_seen_subcommand_from logs; and not __fish_seen_subcommand_from ping; and not __fish_seen_subcommand_from update; and not __fish_seen_subcommand_from inspector; and not __fish_seen_subcommand_from open; and not __fish_seen_subcommand_from open-many; and not __fish_seen_subcommand_from close; and not __fish_seen_subcommand_from reload; and not __fish_seen_subcommand_from kill; and not __fish_seen_subcommand_from close-all; and not __fish_seen_subcommand_from state; and not __fish_seen_subcommand_from get; and not __fish_seen_subcommand_from list-windows; and not __fish_seen_subcommand_from active-windows; and not __fish_seen_subcommand_from debug; and not __fish_seen_subcommand_from graph; and not __fish_seen_subcommand_from help" -f -a help -d 'Print this message or the help of the given subcommand(s)'
+alias ts="task sync"
