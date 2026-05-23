@@ -1,0 +1,10 @@
+# You can make apps auto-start here
+hl.on("hyprland.start", function ()
+        hl.exec_cmd("rfkill unblock all")
+        hl.exec_cmd("wl-clip-persist --clipboard regular")
+          hl.exec_cmd("udiskie")
+          hl.exec_cmd("/usr/local/bin/pypr --debug /tmp/pypr.log")
+          hl.exec_cmd("fcitx5")
+          hl.exec_cmd("arch-update --tray")
+          hl.exec_cmd("emacs --daemon && emacsclient -c -a ''")
+end)
