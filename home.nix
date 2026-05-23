@@ -35,7 +35,6 @@
     CXX = "/bin/g++";
     MAMBA_EXE = "/usr/bin/micromamba";
     MAMBA_ROOT_PREFIX = "/home/easton/.local/share/mamba";
-    XDG_DATA_DIRS = "$XDG_DATA_DIRS:$HOME/.nix-profile/share";
   };
   home.sessionPath = [
     "/usr/condabin"
