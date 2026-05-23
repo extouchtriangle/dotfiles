@@ -80,6 +80,12 @@
       nv = "nvim";
       ka = "killall";
     };
+    plugins = [
+      {
+        name = "bass";
+        src = pkgs.fishPlugins.bass.src;
+      }
+    ];
     functions = {
       zath = ''
         zathura $argv -l error &
