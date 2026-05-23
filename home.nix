@@ -26,6 +26,7 @@
   targets.genericLinux.enable = true;
   home.file = {
     ".config/hypr".source = dotfiles/hypr;
+    ".config/quickshell".source = dotfiles/quickshell;
   };
 
   home.sessionVariables = {
