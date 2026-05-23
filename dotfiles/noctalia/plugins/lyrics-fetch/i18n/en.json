@@ -1,0 +1,39 @@
+{
+    "settings": {
+        "title": "Settings",
+        "font": {
+            "title": "Font Family",
+            "desc": "Select the font for lyrics.",
+            "placeholder": "Select a font...",
+            "search-placeholder": "Search a font...",
+            "size": "Font Size",
+            "size-desc": "Text size in points."
+        },
+        "width": "Widget Width",
+        "scroll": {
+            "speed": "Scroll Speed",
+            "mode": {
+                "title": "Scroll Mode",
+                "always": "Always Scroll",
+                "hover": "Scroll on Hover",
+                "never": "Never Scroll"
+            },
+            "adapt": "Adapt scroll speed to line",
+            "adapt-desc": "Change scroll speed based on length of line"
+        },
+        "hide-when-empty": "Hide when empty",
+        "hide-when-paused": "Hide when paused",
+        "vertical-rotation": {
+            "title": "Vertical lyrics orientation",
+            "description": "Change direction of the lyrics when using a vertical bar.",
+            "auto": "Automatic",
+            "cw": "Clockwise",
+            "ccw": "Counterclockwise"
+        }
+    },
+    "lyrics": {
+        "paused": "Music paused",
+        "loading": "Loading... ",
+        "stopped": "No song playing"
+    }
+}

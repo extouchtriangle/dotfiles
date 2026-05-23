@@ -1,0 +1,33 @@
+{
+  "id": "lyrics-fetch",
+  "name": "Lyrics Fetch/Bar Display",
+  "version": "1.1.1",
+  "minNoctaliaVersion": "3.6.0",
+  "author": "Pever3ll",
+  "license": "GPLv3",
+  "description": "Uses MPRIS data to fetch song lyrics from lrclib.net and displays it in the bar.",
+  "tags": [
+    "Bar",
+    "Music"
+  ],
+  "entryPoints": {
+    "main": "Main.qml",
+    "barWidget": "BarWidget.qml",
+    "settings": "Settings.qml"
+  },
+  "dependencies": {
+    "plugins": []
+  },
+  "metadata": {
+    "defaultSettings": {
+      "widgetWidth": 300,
+      "scrollSpeed": 70,
+      "fontSize": 10,
+      "scrollMode": "always",
+      "hideWhenEmpty": true,
+      "adaptScrollSpeed": true,
+      "verticalRotationDirection": "auto"
+    }
+  },
+  "repository": "https://github.com/noctalia-dev/noctalia-plugins"
+}

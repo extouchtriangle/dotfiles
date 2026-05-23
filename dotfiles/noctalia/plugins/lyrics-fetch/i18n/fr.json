@@ -1,0 +1,43 @@
+{
+    "settings": {
+        "title": "Paramètres",
+        "font": {
+            "title": "Police de caractères",
+            "desc": "Sélectionnez la police pour les paroles.",
+            "placeholder": "Sélectionnez une police...",
+            "search-placeholder": "Rechercher une police...",
+            "size": "Taille de la police",
+            "size-desc": "Taille du texte en points."
+        },
+
+        "width": "Largeur du widget",
+
+        "scroll": {
+            "speed": "Vitesse de défilement",
+            "mode": {
+                "title": "Mode de défilement",
+                "always": "Continu",
+                "hover": "Au survol",
+                "never": "Désactivé"
+            },
+            "adapt": "Vitesse adaptative",
+            "adapt-desc": "Ajuste la vitesse selon la longueur du texte"
+        },
+
+        "hide-when-empty": "Masquer lorsqu'il est vide",
+        "hide-when-paused": "Masquer lorsqu'il est en pause",
+        "vertical-rotation": {
+            "title": "Orientation verticale des paroles",
+            "description": "Change la direction des paroles lors de l'utilisation d'une barre verticale.",
+            "auto": "Automatique",
+            "cw": "Sens horaire",
+            "ccw": "Sens antihoraire"
+        }
+    },
+
+    "lyrics": {
+        "paused": "Musique en pause",
+        "loading": "Attente du chargement 🪿",
+        "stopped": "Aucune chanson en cours de lecture"
+    }
+}

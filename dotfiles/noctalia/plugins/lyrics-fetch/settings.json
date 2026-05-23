@@ -1,0 +1,11 @@
+{
+  "widgetWidth": 300,
+  "scrollSpeed": 70,
+  "fontSize": 10,
+  "scrollMode": "always",
+  "hideWhenEmpty": false,
+  "adaptScrollSpeed": true,
+  "verticalRotationDirection": "auto",
+  "hideWhenPaused": false,
+  "fontFamily": "IBM Plex Sans"
+}

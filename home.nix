@@ -27,6 +27,7 @@
   home.file = {
     ".config/hypr".source = dotfiles/hypr;
     ".config/quickshell".source = dotfiles/quickshell;
+    ".config/noctalia".source = dotfiles/noctalia;
   };
 
   home.sessionVariables = {
