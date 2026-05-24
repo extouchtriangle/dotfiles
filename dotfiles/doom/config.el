@@ -225,8 +225,4 @@
             (pop-to-buffer out-buf)))))))
 (setq frame-title-format '("%b - emacs"))
 (after! smartparens
-  (sp-with-modes 'markdown-mode
-    (sp-local-pair "*" "*" :wrap "C-*"))
-  (sp-with-modes 'LaTeX-mode
-    (sp-local-pair "$" "$" :wrapt "C-$"))
-  )
+  (setq sp-autoskip-closing-pair 'always))
