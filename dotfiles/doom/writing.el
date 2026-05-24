@@ -87,3 +87,6 @@
 ;; Synonyms via powerthesaurus (online, no system deps)
 (use-package powerthesaurus
   :ensure t)
+(setq LaTeX-indent-level 4)
+(setq LaTeX-item-indent -2)
+(setq LaTeX-indent-level-compiler-options 2)
