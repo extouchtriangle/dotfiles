@@ -225,8 +225,5 @@
             (pop-to-buffer out-buf)))))))
 (setq frame-title-format '("%b - emacs"))
 (after! smartparens
-  (sp-with-modes '(tex-mode plain-tex-mode latex-mode LaTeX-mode)
-    ;; Allow skipping over the closing single $
-    (sp-local-pair "$" "$" :actions '(:rem insert))
-    ;; Properly handle double $$ for display math
-    (sp-local-pair "$$" "$$" :actions '(:rem insert))))
+  (sp-with-modes '(tex-mode plain-tex-mode latex-mode LaTeX-mode text-mode)
+    (sp-local-pair "$" nil :actions :rem)))
