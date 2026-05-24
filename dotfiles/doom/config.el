@@ -224,4 +224,4 @@
               (read-only-mode 1))
             (pop-to-buffer out-buf)))))))
 (setq frame-title-format '("%b - emacs"))
-(setq sp-autoskip-closing-pair 'always)
+(setq sp-autoskip-opening-pair 'always-end)
