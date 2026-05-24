@@ -1,0 +1,7 @@
+# -*- mode: snippet -*-
+# name: em-dash
+# uuid:
+# key: ---
+# condition: t
+# --
+—$0
