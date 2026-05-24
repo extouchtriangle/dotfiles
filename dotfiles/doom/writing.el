@@ -87,5 +87,3 @@
 ;; Synonyms via powerthesaurus (online, no system deps)
 (use-package powerthesaurus
   :ensure t)
-(add-hook 'text-mode-hook 'variable-pitch-mode)
-(add-hook 'org-mode-hook (lambda () (variable-pitch-mode -1)))
