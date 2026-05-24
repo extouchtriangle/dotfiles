@@ -3,5 +3,5 @@
 {
   home.file = {
     ".config/doom".source = dotfiles/doom;
-  }
+  };
 }
