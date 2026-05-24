@@ -227,4 +227,6 @@
 (after! smartparens
   (sp-with-modes 'markdown-mode
     (sp-local-pair "*" "*" :wrap "C-*"))
+  (sp-with-modes 'LaTeX-mode
+    (sp-local-pair "$" "$" :wrapt "C-$"))
   )
