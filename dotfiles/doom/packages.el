@@ -86,4 +86,4 @@
 (package! dictionary)
 (package! powerthesaurus)
 (package! mixed-pitch)
-(package! ox-clip :defer nil)
+(package! ox-clip)
