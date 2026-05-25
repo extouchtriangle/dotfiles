@@ -6,32 +6,6 @@
 (defun jb-dashboard--load-time ()
   (float-time (time-subtract after-init-time before-init-time)))
 
-(defun jb-get-org-todos ()
-  "Fetch tasks and deadlines from all files in org-agenda-files."
-  (let ((todos '()))
-    (when (boundp 'org-agenda-files)
-      (dolist (file (org-agenda-files))
-        (when (file-exists-p file)
-          (with-current-buffer (find-file-noselect file)
-            (org-element-map (org-element-parse-buffer) 'headline
-              (lambda (headline)
-                (let* ((todo-type (org-element-property :todo-keyword headline))
-                       (title (org-element-property :title headline))
-                       (deadline (org-element-property :deadline headline))
-                       (deadline-str (if deadline
-                                         (format " !! %s" (org-timestamp-format deadline "%Y-%m-%d"))
-                                       "")))
-                  ;; Match active TODOs
-                  (when (and todo-type
-                             (not (member todo-type org-done-keywords)))
-                    (push (concat
-                           (substring-no-properties (org-element-interpret-data title))
-                           deadline-str)
-                          todos)))))))))
-    (if todos
-        (mapcar (lambda (title) (format "• %s" (string-trim title)))
-                (seq-take (reverse todos) 5))
-      '("no active tasks"))))
 (defun jb-dashboard-render ()
   (let ((buf (get-buffer-create jb-dashboard-buffer)))
     (with-current-buffer buf
@@ -42,7 +16,6 @@
              (center (lambda (s)
                        (concat (make-string (max 0 (/ (- width (string-width s)) 2)) ?\s)
                                s)))
-             (todo-list (jb-get-org-todos))
              (lines (append
                      (list (funcall center "extouchtriangle, welcome to emacs")
                            ""
@@ -52,7 +25,6 @@
                            (funcall center (downcase (format-time-string "%a, %d %b %y")))
                            ""
                            (funcall center "--- tasks ---"))
-                     (mapcar center todo-list)
                      (list ""
                            (funcall center (format "loaded in %.2fs" (jb-dashboard--load-time))))))
              (top-pad (max 0 (/ (- height (length lines)) 2))))
