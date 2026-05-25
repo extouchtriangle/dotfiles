@@ -239,3 +239,8 @@
   ;; Stop inheriting TeX-PDF-mode so it doesn't force the -pdf flag
   (setq auctex-latexmk-inherit-TeX-PDF-mode nil))
 (setq ox-clip-linux-cmd "wl-copy -t text/html")
+(use-package! ox-clip
+  :demand t
+  :config
+  ;; Your configuration goes here
+  (setq ox-clip-linux-cmd "wl-copy -t text/html"))
