@@ -236,4 +236,5 @@
   :after tex
   :config
   (auctex-latexmk-setup)
-  (setq auctex-latexmk-inherit-TeX-PDF-mode t))
+  ;; Stop inheriting TeX-PDF-mode so it doesn't force the -pdf flag
+  (setq auctex-latexmk-inherit-TeX-PDF-mode nil))
