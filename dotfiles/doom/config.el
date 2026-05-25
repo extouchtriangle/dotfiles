@@ -227,5 +227,5 @@
 (after! smartparens
   (sp-with-modes '(tex-mode plain-tex-mode latex-mode LaTeX-mode text-mode)
     (sp-local-pair "$" nil :actions :rem)))
-(setq doom-user-dir "/home/easton/nix-dotfiles/dotfiles/doom/")
-(setq org-agenda-files '("~/org/todo.org"))
+(setopt doom-user-dir "/home/easton/nix-dotfiles/dotfiles/doom/")
+(setopt org-agenda-files '("~/org/todo.org"))
