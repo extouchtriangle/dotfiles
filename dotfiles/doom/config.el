@@ -241,7 +241,13 @@
 (setq TeX-source-correlate-mode t)
 (setq TeX-source-correlate-start-server t)
 (setq TeX-source-correlate-method 'synctex)
-(with-eval-after-load 'tex
+(after! tex
+  ;; 1. Register Sioyek and pass the necessary SyncTeX flags for forward search
   (add-to-list 'TeX-view-program-list
                '("Sioyek" "sioyek --reuse-instance --forward-search-file \"%b\" --forward-search-line %n \"%o\""))
-  (setq TeX-view-program-selection '((output-pdf "Sioyek"))))
+
+  ;; 2. Make Sioyek the default PDF viewer
+  (setq TeX-view-program-selection '((output-pdf "Sioyek")))
+
+  ;; 3. Automatically turn on SyncTeX mode whenever you open a LaTeX file
+  (add-hook 'LaTeX-mode-hook #'TeX-source-correlate-mode))
