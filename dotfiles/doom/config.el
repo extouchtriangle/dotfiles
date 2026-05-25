@@ -227,4 +227,8 @@
 (after! smartparens
   (sp-with-modes '(tex-mode plain-tex-mode latex-mode LaTeX-mode text-mode)
     (sp-local-pair "$" nil :actions :rem)))
+(setq! org-directory "~/org/")
 (setq! org-agenda-files '("~/org/todo.org"))
+
+;; Force Emacs to forget any hidden "Custom" settings for the agenda
+(put 'org-agenda-files 'customized-value nil)
