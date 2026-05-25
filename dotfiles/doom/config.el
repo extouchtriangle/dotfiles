@@ -232,15 +232,16 @@
 
 ;; Force Emacs to forget any hidden "Custom" settings for the agenda
 (put 'org-agenda-files 'customized-value nil)
-(use-package! auctex-latexmk
-  :after tex
-  :config
-  (auctex-latexmk-setup)
-  ;; Stop inheriting TeX-PDF-mode so it doesn't force the -pdf flag
-  (setq auctex-latexmk-inherit-TeX-PDF-mode nil))
 (setq ox-clip-linux-cmd "wl-copy -t text/html")
 (use-package! ox-clip
   :demand t
   :config
   ;; Your configuration goes here
-  (setq ox-clip-linux-cmd "wl-copy -t text/html"))
+  (setq ox-clip-linux-cmd "wl-copy -t text/html < %f"))
+(setq TeX-source-correlate-mode t)
+(setq TeX-source-correlate-start-server t)
+(setq TeX-source-correlate-method 'synctex)
+(with-eval-after-load 'tex
+  (add-to-list 'TeX-view-program-list
+               '("Sioyek" "sioyek --reuse-instance --forward-search-file \"%b\" --forward-search-line %n \"%o\""))
+  (setq TeX-view-program-selection '((output-pdf "Sioyek"))))
