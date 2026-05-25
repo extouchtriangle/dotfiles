@@ -55,3 +55,5 @@
 
 (map! :leader
       :desc "Org Drill" "D" #'org-drill)
+(with-eval-after-load 'evil
+  (define-key evil-visual-state-map "t" 'ox-clip-formatted-copy))
