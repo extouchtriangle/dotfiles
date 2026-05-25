@@ -86,3 +86,4 @@
 (package! dictionary)
 (package! powerthesaurus)
 (package! mixed-pitch)
+(package! auctex-latexmk)

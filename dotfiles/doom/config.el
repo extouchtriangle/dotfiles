@@ -232,3 +232,8 @@
 
 ;; Force Emacs to forget any hidden "Custom" settings for the agenda
 (put 'org-agenda-files 'customized-value nil)
+(use-package! auctex-latexmk
+  :after tex
+  :config
+  (auctex-latexmk-setup)
+  (setq auctex-latexmk-inherit-TeX-PDF-mode t))
