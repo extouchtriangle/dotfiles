@@ -232,7 +232,6 @@
 
 ;; Force Emacs to forget any hidden "Custom" settings for the agenda
 (put 'org-agenda-files 'customized-value nil)
-(setq ox-clip-linux-cmd "wl-copy -t text/html")
 (use-package! ox-clip
   :demand t
   :config
