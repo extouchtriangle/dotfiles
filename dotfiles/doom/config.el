@@ -254,3 +254,6 @@
           ((output-dvi style-pstricks) "dvips and gv")
           (output-dvi "xdvi")
           (output-html "xdg-open"))))
+(use-package tex
+  :config
+  (setq TeX-view-program-seleciton '((output-pdf "Sioyek"))))
