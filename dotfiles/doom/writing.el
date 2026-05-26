@@ -90,3 +90,4 @@
 (setq LaTeX-indent-level 2)
 (setq LaTeX-item-indent 0)
 (setq LaTeX-indent-level-compiler-options 2)
+(map! :map cdlatex-mode-map :i "TAB" #'cdlatex-tab)
