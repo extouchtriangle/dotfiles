@@ -159,7 +159,7 @@
 (use-package openwith
   :ensure t
   :config
-  (setq openwith-associations '(("\\.pdf\\'" "zathura" (file))))
+  (setq openwith-associations '(("\\.pdf\\'" "sioyek" (file))))
   (openwith-mode 1))
 
 (set-email-account! "gmail"
