@@ -21,7 +21,6 @@
     pkgs.bat
     pkgs.kitty
     pkgs.rustup
-    pkgs.emacs-pgtk
   ];
   targets.genericLinux.enable = true;
   home.file = {
