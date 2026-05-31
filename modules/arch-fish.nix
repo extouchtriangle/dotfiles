@@ -64,7 +64,7 @@
         bass source ~/.conda/envs/ros_env/setup.bash
         '';
         fish_user_key_bindings = ''
-        set -g fish_key_bindings fish_vi_key_bindings
+
         bind -M insert right complete
         bind -M insert \t accept-autosuggestion
         bind -M normal right complete
