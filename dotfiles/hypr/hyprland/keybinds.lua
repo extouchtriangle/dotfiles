@@ -162,4 +162,5 @@ hl.bind(
 )
 hl.bind("SUPER + Return", hl.dsp.exec_cmd("kitty"))
 hl.bind("SUPER + Space", hl.dsp.exec_cmd("emacsclient -e '(universal-launcher-popup)'"))
+hl.bind("SUPER + SHIFT + E", hl.dsp.exec_cmd("emacsclient -e '(thanos/type)'"))
 -- Trigger when the switch is toggled.
