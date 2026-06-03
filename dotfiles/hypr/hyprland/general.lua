@@ -255,7 +255,7 @@ hl.config({
 	input = {
 		kb_layout = "us,us",
 		kb_variant = "dvorak,intl",
-		kb_options = "caps:escape",
+		kb_options = "caps:escape, grp:alts_toggle",
 		numlock_by_default = true,
 		repeat_delay = 250,
 		repeat_rate = 35,
