@@ -253,8 +253,8 @@ hl.animation({
 
 hl.config({
 	input = {
-		kb_layout = "us",
-		kb_variant = "dvorak",
+		kb_layout = "us,us",
+		kb_variant = "dvorak,intl",
 		kb_options = "caps:escape",
 		numlock_by_default = true,
 		repeat_delay = 250,
