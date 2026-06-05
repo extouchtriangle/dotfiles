@@ -732,7 +732,7 @@
     },
     "wallpaper": {
         "automationEnabled": false,
-        "directory": "/home/joshua/Pictures/Wallpapers",
+        "directory": "/home/easton/Pictures/Wallpapers",
         "enableMultiMonitorDirectories": false,
         "enabled": true,
         "favorites": [
