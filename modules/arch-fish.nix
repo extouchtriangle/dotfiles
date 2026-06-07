@@ -7,6 +7,7 @@
       icat = "kitten icat";
       yesman = "yes | sudo pacman";
       lgit = "lazygit";
+      ssh = "kitten ssh"
     };
     shellAbbrs = {
       s = "yesman -S";
